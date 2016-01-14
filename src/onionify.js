@@ -1,4 +1,15 @@
-var onion = 'https://dua6u3dsufohrnsz.onion';
+function getData()
+{
+    var scripts = document.getElementsByTagName('script');
+    var scriptName = scripts[scripts.length-1];
+
+    return {
+        domain : scriptName.getAttribute('data-domain'),
+    };
+}
+
+var onion = getData().domain;
+
 var query = new XMLHttpRequest();
 if (window.location.protocol + "//" + window.location.hostname != onion) {
     query.onload = function(e) {
