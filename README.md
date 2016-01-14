@@ -8,6 +8,25 @@ Automaticaly redirect user to onion domain.
 bower install onionify.js
 ```
 
+# Configuration
+
+This script made a [cross-origin
+request](https://developer.mozilla.org/fr/docs/HTTP/Access_control_CORS). You
+need to allow this request, generally via your http server, by adding these
+http headers:
+
+```
+Access-Control-Allow-Origin: https://example.org
+Access-Control-Request-Method: HEAD
+```
+
+For example with nginx:
+
+```
+add_header 'Access-Control-Allow-Origin' 'https://example.org'
+add_header 'Access-Control-Request-Method' 'HEAD'
+```
+
 # Usage
 
 ```html
