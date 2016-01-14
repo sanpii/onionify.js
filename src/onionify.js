@@ -6,16 +6,16 @@ function getData()
     var scriptName = scripts[scripts.length-1];
 
     return {
-        domain : scriptName.getAttribute('data-domain'),
+        onion: scriptName.getAttribute('data-onion'),
     };
 }
 
-var onion = getData().domain;
+var onion = getData().onion;
 
 if (onion !== null) {
     if (window.location.protocol + "//" + window.location.hostname != onion) {
         var query = new XMLHttpRequest();
-        var url = window.location.protocol + "//" + getData().domain;
+        var url = window.location.protocol + "//" + onion;
 
         query.onload = function(e) {
             if (query.status === 200) {
@@ -28,5 +28,5 @@ if (onion !== null) {
     }
 }
 else {
-    console.error("Missing data-domain attribute. Ensure that script loaded synchronously.");
+    console.error("Missing data-onion attribute. Ensure that script loaded synchronously.");
 }
