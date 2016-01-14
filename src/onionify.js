@@ -13,8 +13,7 @@ var onion = getData().domain;
 var query = new XMLHttpRequest();
 if (window.location.protocol + "//" + window.location.hostname != onion) {
     query.onload = function(e) {
-        if (query.status != 200) return
-        else {
+        if (query.status == 200) {
             window.location.assign(onion + window.location.pathname);
         }
     };
