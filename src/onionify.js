@@ -1,3 +1,5 @@
+'use strict';
+
 function getData()
 {
     var scripts = document.getElementsByTagName('script');
