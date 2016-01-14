@@ -13,14 +13,15 @@ var onion = getData().domain;
 if (onion !== null) {
     if (window.location.protocol + "//" + window.location.hostname != onion) {
         var query = new XMLHttpRequest();
+        var url = window.location.protocol + "//" + getData().domain;
 
         query.onload = function(e) {
             if (query.status === 200) {
-                window.location.assign(onion + window.location.pathname);
+                window.location.assign(url + window.location.pathname);
             }
         };
         query.timeout = 5000;
-        query.open('HEAD', onion, true);
+        query.open('HEAD', url, true);
         query.send();
     }
 }
