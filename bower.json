@@ -3,5 +3,8 @@
     "description": "Automaticaly redirect user to onion domain",
     "main": "src/onionify.js",
     "keywords": ["tor", "onion"],
-    "license": "WTFPL"
+    "license": "WTFPL",
+    "ignore": [
+        "src/ribbon.xcf"
+    ]
 }
