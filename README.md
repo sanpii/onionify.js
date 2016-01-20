@@ -31,6 +31,11 @@ add_header 'Access-Control-Request-Method' 'HEAD'
 
 ```html
 <script src="bower_components/onionify.js/src/onionify.js" data-onion="https://dua6u3dsufohrnsz.onion"></script>
+<noscript>
+    <a href="https://dua6u3dsufohrnsz.onion" style="position: absolute; top: 0; right: 0; border: 0;">
+        <img src="bower_components/onionify.js/src/ribbon.png" alt="This site has an .onion domain" />
+    </a>
+</noscript>
 ```
 
 The script should be loaded **synchronously**. No *async* attribute.
